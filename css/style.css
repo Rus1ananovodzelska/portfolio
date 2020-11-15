@@ -46,8 +46,6 @@ table {
   border-spacing: 0; }
 
 body {
-  font: 32px "Roboto", sans-serif;
-  line-height: 1.17;
   background: #fff;
   color: #272822; }
 
@@ -143,17 +141,26 @@ h1 {
       text-decoration: none; }
       .menu-open .hero-nav-item-link:hover {
         text-decoration: underline; }
+      .menu-open .hero-nav-item-link span {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 16px; }
+    .menu-open .hero-nav-item .tel {
+      display: block;
+      color: #000;
+      margin: 48px 0 80px; }
 
 .menu-open .hero {
   width: 50%; }
   .menu-open .hero:before {
     width: 0; }
-  .menu-open .hero-text {
+  .menu-open .hero .welcome {
     opacity: 0;
     display: none; }
   .menu-open .hero .info {
     display: block;
-    opacity: 1; }
+    opacity: 1;
+    margin: -50px 80px; }
 
 .links {
   width: 80px;
@@ -186,15 +193,30 @@ h1 {
     height: calc(100vh - 160px); }
   .hero-text {
     position: relative;
-    z-index: 10;
-    width: 378px;
-    height: 188px; }
+    z-index: 10; }
     .hero-text .welcome {
       font-size: 80px;
       font-weight: bold; }
-  .hero .info {
-    opacity: 0;
-    display: none; }
+    .hero-text .info {
+      opacity: 0;
+      display: none;
+      width: 480px;
+      min-height: 215px;
+      position: absolute;
+      top: -25px;
+      left: -318px;
+      z-index: 20; }
+      .hero-text .info span {
+        font-size: 18px;
+        font-style: italic; }
+      .hero-text .info strong {
+        display: block;
+        font-size: 32px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 38px; }
+      .hero-text .info p {
+        font-size: 32px; }
   .hero:hover:before {
     opacity: 0;
     transition: opacity 4s, transform 2s;
@@ -207,21 +229,8 @@ h1 {
     display: none; }
 
 span {
-  color: #F92672; }
-
-.info {
-  min-width: 480px;
-  min-height: 215px;
-  position: absolute;
-  top: 0;
-  left: -325px; }
-  .info span {
-    font-size: 18px;
-    font-style: italic; }
-  .info strong {
-    font-size: 32px;
-    font-weight: bold;
-    color: #000; }
+  color: #F92672;
+  font-style: italic; }
 
 .parallax {
   background-image: url("../img/laptop.png");
@@ -230,3 +239,11 @@ span {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+img {
+  width: 100%;
+  height: 960px; }
+
+.contacts {
+  display: flex;
+  justify-content: space-between; }

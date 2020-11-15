@@ -2,8 +2,6 @@
 @import 'reset';
 
 body {
-	font: $text-size 'Roboto', sans-serif;
-	line-height: 1.17;
 	background: $bg-color;
 	color: $main-text;
 }
@@ -118,6 +116,17 @@ h1 {
 			&:hover {
 			text-decoration: underline;
 			}
+			
+			span {
+			font-size: 18px;
+			display: block;
+			margin-bottom: 16px;
+			}
+		}
+		.tel {
+		display: block;
+		color: #000;
+		margin: 48px 0 80px;
 		}
 	}
 }
@@ -128,13 +137,15 @@ h1 {
 	width: 0;
 	}
 
-	&-text {
-		opacity: 0;
-		display: none;
+	.welcome {
+	opacity: 0;
+	display: none;
 	}
+		
 	.info {
-		display: block;
-		opacity: 1;
+	display: block;
+	opacity: 1;
+	margin: -50px 80px;
 	}
 }
 .links {
@@ -171,57 +182,56 @@ h1 {
 	&-text {
 		position: relative;
 		z-index: 10;
-		width: 378px;
-		height: 188px;
 
 		.welcome {
 			font-size: 80px;
 			font-weight: bold;
 		}
-	}
-	.info {
-		opacity: 0;
-		display: none;
-	}
-	&:hover {
-		&:before {
-			opacity: 0;
-			transition: opacity 4s, transform 2s;
-			transform: translateY(100%);
-		}
 		.info {
-			display: block;
-			opacity: 1;
-		}
-		.welcome {
 			opacity: 0;
 			display: none;
+			width: 480px;
+			min-height: 215px;
+			position: absolute;
+			top: -25px;
+			left: -318px;
+			z-index: 20;
+
+			& span {
+				font-size: 18px;
+				font-style: italic;
+			}
+			& strong {
+				display: block;
+				font-size: $text-size;
+				font-weight: bold;
+				color: #000;
+				margin-bottom: 38px;
+			}
+			& p {
+				font-size: $text-size;	
+			}
 		}
 	}
+		&:hover {
+			&:before {
+				opacity: 0;
+				transition: opacity 4s, transform 2s;
+				transform: translateY(100%);
+			}
+			.info {
+				display: block;
+				opacity: 1;
+				}
+			.welcome {
+				opacity: 0;
+				display: none;
+			}
+		}
 }
 span {
 	color: $brand-color;
-}
-.info {
-	min-width: 480px;
-	min-height: 215px;
-	position: absolute;
-	top: 0;
-	left: -325px;
-
-	& span {
-		font-size: 18px;
-		font-style: italic;
-	}
-	& strong {
-		font-size: $text-size;
-		font-weight: bold;
-		color: #000;
-	}
-	& p {
-		
-		
-	}
+	font-style: italic;
 }
 .parallax {
   background-image: url("../img/laptop.png");
@@ -231,3 +241,12 @@ span {
   background-repeat: no-repeat;
   background-size: cover;
 }
+img {
+	width: 100%;
+	height: 960px;
+}
+.contacts {
+	display: flex;
+	justify-content: space-between;
+	}
+
