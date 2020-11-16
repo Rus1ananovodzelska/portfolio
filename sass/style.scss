@@ -60,7 +60,7 @@ h1 {
 				content: "";
 				width: 56px;
 				height: 5px;
-				background: #75715E;
+				background: $icon-color;
 				display: block;
 				position: absolute;
 				left: -10px;
@@ -241,12 +241,139 @@ span {
   background-repeat: no-repeat;
   background-size: cover;
 }
-img {
+.skills {
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  background: $background-color;
+  display: flex;
+
+  	&-list {
+  	display: flex;
+  	flex-direction: column;
+  	flex: 0 0 442px;
+	margin: 0 0 0 $gap;
+	
+		&-item {
+		font-size: $text-size;
+		color: #000;
+		text-decoration: none;
+		padding-bottom: 32px;
+	
+			&:hover {
+			text-decoration: underline;
+
+			}						
+		}
+	}
+	&-level {
+	display: flex;
+	flex-direction: column;
+	width: calc(100% - 442px);
+	margin: 0 $gap 0 0;
+
+		.level {
+		  display: flex;
+		  width: 14px;
+		  height: 14px;
+		  background: $brand-color;
+		  margin: 18px 0 30px;
+		  border-radius: 50%;
+		  transition: width 0.5s;
+		
+		&:hover {
+		  width: 100%;
+		  border-radius: 8px;
+		}
+		}
+	}
+}
+.title {
+	font-size: $gap;
+	font-weight: bold;
+	padding: $gap $gap 32px;
+	background: $background-color;
+}
+.pic {
 	width: 100%;
 	height: 960px;
+}
+.projects {
+	width: 100%;
+  	min-height: calc(100vh - 80px);
+  	background: #353535;
+
+  	.title {
+  	color: $primary-color;
+  	background: #353535;
+  	}
+}
+.projects-item {
+	margin: 0 0 $gap $gap;
+	max-width: 600px;
+
+	strong {
+	color: $bg-color;
+	font-size: $text-size;
+	font-weight: bold;
+	}
+
+	p {
+	color: $bg-color;
+	font-size: $text-size;
+	padding: 32px 0 16px;
+	}
+
+	a {
+	color: $brand-color;
+	}
+}
+.experience {
+	width: 100%;
+  	min-height: calc(100vh - 80px);
+	background: $background-color;
+	margin-bottom: $gap;
+
+	&-item {
+	margin: 0 $gap;
+
+		strong {
+		color: #000;
+		font-size: $text-size;
+		font-weight: bold;
+		display: block;
+		}
+
+		p {
+		color: $main-text;
+		font-size: $text-size;
+		padding-bottom: 46px;
+		}
+		a {
+		color: $brand-color;
+		}
+	}
 }
 .contacts {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+
+
+	.email span {
+	display: block;
 	}
+
+	.email-me {
+	font-size: 32px;
+    color: #272822;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+	}
+
+	.tel {
+		color: #000;
+		font-style: normal;
+		}
+}
 

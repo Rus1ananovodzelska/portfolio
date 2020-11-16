@@ -240,10 +240,103 @@ span {
   background-repeat: no-repeat;
   background-size: cover; }
 
-img {
+.skills {
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  background: #F5F5F5;
+  display: flex; }
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 442px;
+    margin: 0 0 0 80px; }
+    .skills-list-item {
+      font-size: 32px;
+      color: #000;
+      text-decoration: none;
+      padding-bottom: 32px; }
+      .skills-list-item:hover {
+        text-decoration: underline; }
+  .skills-level {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 442px);
+    margin: 0 80px 0 0; }
+    .skills-level .level {
+      display: flex;
+      width: 14px;
+      height: 14px;
+      background: #F92672;
+      margin: 18px 0 30px;
+      border-radius: 50%;
+      transition: width 0.5s; }
+      .skills-level .level:hover {
+        width: 100%;
+        border-radius: 8px; }
+
+.title {
+  font-size: 80px;
+  font-weight: bold;
+  padding: 80px 80px 32px;
+  background: #F5F5F5; }
+
+.pic {
   width: 100%;
   height: 960px; }
 
+.projects {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: #353535; }
+  .projects .title {
+    color: #E6D874;
+    background: #353535; }
+
+.projects-item {
+  margin: 0 0 80px 80px;
+  max-width: 600px; }
+  .projects-item strong {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold; }
+  .projects-item p {
+    color: #fff;
+    font-size: 32px;
+    padding: 32px 0 16px; }
+  .projects-item a {
+    color: #F92672; }
+
+.experience {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: #F5F5F5;
+  margin-bottom: 80px; }
+  .experience-item {
+    margin: 0 80px; }
+    .experience-item strong {
+      color: #000;
+      font-size: 32px;
+      font-weight: bold;
+      display: block; }
+    .experience-item p {
+      color: #272822;
+      font-size: 32px;
+      padding-bottom: 46px; }
+    .experience-item a {
+      color: #F92672; }
+
 .contacts {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
+  .contacts .email span {
+    display: block; }
+  .contacts .email-me {
+    font-size: 32px;
+    color: #272822;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold; }
+  .contacts .tel {
+    color: #000;
+    font-style: normal; }
