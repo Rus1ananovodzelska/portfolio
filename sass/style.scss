@@ -1,9 +1,77 @@
 @import 'var';
 @import 'reset';
 
-body {
-	background: $bg-color;
-	color: $main-text;
+body.dark-mode {
+    background: $bg-color-dt;
+    color: $main-text-dt;
+
+	a {
+	color: $main-text-dt;
+	}
+
+	h1 {
+	color: $bg-color;
+	}
+
+	button {
+    background: $icon-color-dt;
+	}
+	.menu .btn-burger-line {
+		background: $icon-color-dt; 
+		&:before {
+		background: $icon-color-dt;
+		}
+		&:after {
+		background: $icon-color-dt;
+		}
+	}
+	.hero {
+		background: $primary-color-dt;
+
+		&:hover {
+		background: $background-dt;
+	}
+	}
+	span {
+		color: $brand-color-dt;
+	}
+	.menu-open .hero-content {
+		background: $primary-color-dt;
+	
+	& .hero-nav span {
+		color: #fff;
+		}
+	}
+	.menu-open .hero {
+		background: $background-dt;
+
+	}
+	.level {
+		background: $brand-color-dt;
+	}
+	.projects .title {
+		color: $primary-color-dt;
+	}
+	.projects-item a {
+		color: $icon-color-dt;
+	}
+	.experience-item a {
+		color: $icon-color-dt;
+	}
+	.contacts .email-me {
+		color: #fff;
+	}
+	.contacts .tel {
+		color: #fff;
+	}
+}
+body.light-mode {
+    background: $bg-color;
+    color: $main-text;
+
+	button {
+    background: $icon-color;
+	}
 }
 .wrapper {
 	padding: $gap;
@@ -111,6 +179,7 @@ h1 {
 		&-link {
 		font-size: $text-size;
 		color: $main-text;
+		font-weight: bold;
 		text-decoration: none;
 	
 			&:hover {
@@ -121,10 +190,12 @@ h1 {
 			font-size: 18px;
 			display: block;
 			margin-bottom: 16px;
+			font-weight: normal;
 			}
 		}
 		.tel {
 		display: block;
+		font-size: 18px;
 		color: #000;
 		margin: 48px 0 80px;
 		}
@@ -146,6 +217,7 @@ h1 {
 	display: block;
 	opacity: 1;
 	margin: -50px 80px;
+	max-width: 480px;
 	}
 }
 .links {
@@ -162,7 +234,7 @@ h1 {
 .hero {
 	width: 100%;
 	background: $primary-color;
-	min-height: calc(100vh - 160px);
+	height: calc(100vh - 160px);
 	margin: 0 0 $gap;
 	position: relative;
 	display: flex;
@@ -170,13 +242,13 @@ h1 {
 	align-items: center;
 	&:before {
 		content: "";
+		width: 50%;
+		height: calc(100vh - 160px);
 		position: absolute;
 		top: 0;
 		right: 0;
 		z-index: 0;
-		width: 50%;
-		background: #f5f5f5;
-		height: calc(100vh - 160px);
+		background: $background;
 	}
 
 	&-text {
@@ -190,13 +262,7 @@ h1 {
 		.info {
 			opacity: 0;
 			display: none;
-			width: 480px;
-			min-height: 215px;
-			position: absolute;
-			top: -25px;
-			left: -318px;
-			z-index: 20;
-
+			
 			& span {
 				font-size: 18px;
 				font-style: italic;
@@ -222,7 +288,7 @@ h1 {
 			.info {
 				display: block;
 				opacity: 1;
-				}
+			}
 			.welcome {
 				opacity: 0;
 				display: none;
@@ -244,7 +310,7 @@ span {
 .skills {
   width: 100%;
   min-height: calc(100vh - 160px);
-  background: $background-color;
+  background: $background;
   display: flex;
 
   	&-list {
@@ -291,7 +357,7 @@ span {
 	font-size: $gap;
 	font-weight: bold;
 	padding: $gap $gap 32px;
-	background: $background-color;
+	background: $background;
 }
 .pic {
 	width: 100%;
@@ -330,7 +396,7 @@ span {
 .experience {
 	width: 100%;
   	min-height: calc(100vh - 80px);
-	background: $background-color;
+	background: $background;
 	margin-bottom: $gap;
 
 	&-item {
@@ -348,8 +414,10 @@ span {
 		font-size: $text-size;
 		padding-bottom: 46px;
 		}
+
 		a {
 		color: $brand-color;
+		font-style: italic;
 		}
 	}
 }
@@ -357,7 +425,6 @@ span {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
 
 	.email span {
 	display: block;
@@ -374,6 +441,6 @@ span {
 	.tel {
 		color: #000;
 		font-style: normal;
-		}
+	}
 }
 

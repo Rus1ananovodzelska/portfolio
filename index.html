@@ -9,12 +9,12 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="img/photo-camera.png">
     </head>
-    <body>
+    <body id="body" class="dark-mode">
         <div id="wrapperID" class="wrapper">
         	<header class="header">
         		<h1>Ruslana Novodzelska</h1>
 <!-- <button> /will switch to the dark/bright			  				 -->
-        		<button class="theme"></button>
+        		<button class="theme" type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
         	</header>
         	<nav class="menu">
 				<button id="burgerID" class="btn-burger">
@@ -110,6 +110,13 @@
 	        burger.onclick = function() {
 	            wrapper.classList.toggle("menu-open");
 	        }
+    	</script>
+    	<script>
+    		function toggleDarkLight() {
+			  var body = document.getElementById("body");
+			  var currentClass = body.className;
+			  body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+			}
     	</script>
     </body>
 </html>
