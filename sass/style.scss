@@ -2,6 +2,7 @@
 @import 'reset';
 
 body.dark-mode {
+	font-family: 'Noto Sans JP', sans-serif;
     background: $bg-color-dt;
     color: $main-text-dt;
 
@@ -30,10 +31,27 @@ body.dark-mode {
 	}
 	.hero {
 		background: $primary-color-dt;
-
+		transition: background 2s;
+	
+		&:before {
+			content: "";
+			width: 50%;
+			height: calc(100vh - 160px);
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 2;
+			background: $background-dt;
+			transition: width 2s;
+		}
+	
 		&:hover {
-		background: $background-dt;
-	}
+			background: $background-dt;
+			
+			&:before {
+				width: 100%;
+			}	
+		}
 	}
 	span {
 		color: $brand-color-dt;
@@ -42,15 +60,17 @@ body.dark-mode {
 		background: $primary-color-dt;
 	
 	& .hero-nav span {
-		color: #fff;
+		color: $bg-color;
+		}
+	& .hero-nav-item-link:hover {
+		text-decoration-color: $bg-color;
 		}
 	}
 	.menu-open .hero {
 		background: $background-dt;
 		margin: 0;
-
 	}
-	.level {
+	.skills-list-item:before {
 		background: $brand-color-dt;
 	}
 	.projects .title {
@@ -71,14 +91,14 @@ body.dark-mode {
 		}
 	}
 	.contacts .email-me {
-		color: #fff;
+		color: $bg-color;
 
 		& svg * {
-		fill: #fff;
+		fill: $bg-color;
 		}
 	}
 	.contacts .tel {
-		color: #fff;
+		color: $bg-color;
 	}
 	.parallax.pic01 {
   	background-image: url("../img/laptop-dt.png");
@@ -88,6 +108,7 @@ body.dark-mode {
   	}
 }
 body.light-mode {
+	font-family: 'Noto Sans JP', sans-serif;
     background: $bg-color;
     color: $main-text;
 
@@ -205,6 +226,7 @@ h1 {
 	
 			&:hover {
 			text-decoration: underline;
+			text-decoration-color: $brand-color;
 			}
 			
 			span {
@@ -222,25 +244,6 @@ h1 {
 		}
 	}
 }
-.menu-open .hero {
-	width: 50%;
-	
-	&:before {
-	width: 0;
-	}
-
-	.welcome {
-	opacity: 0;
-	display: none;
-	}
-		
-	.info {
-	display: block;
-	opacity: 1;
-	margin: -50px 80px;
-	max-width: 480px;
-	}
-}
 .links {
 	width: $gap;
 	position: fixed;
@@ -251,6 +254,10 @@ h1 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	& .list-item {
+	margin-bottom: 16px;
+	}
 }
 .hero {
 	width: 100%;
@@ -270,6 +277,7 @@ h1 {
 		right: 0;
 		z-index: 0;
 		background: $background;
+		transition: opacity 4s, transform 2s;
 	}
 
 	&-text {
@@ -304,7 +312,6 @@ h1 {
 		justify-content: flex-start;
 			&:before {
 				opacity: 0;
-				transition: opacity 4s, transform 2s;
 				transform: translateY(100%);
 			}
 			.info {
@@ -319,6 +326,26 @@ h1 {
 			}
 		}
 }
+.menu-open .hero {
+	width: 50%;
+	justify-content: center;
+	
+	&:before {
+	width: 0;
+	}
+
+	.welcome {
+	opacity: 0;
+	display: none;
+	}
+		
+	.info {
+	display: block;
+	opacity: 1;
+	margin: -50px 80px;
+	max-width: 480px;
+	}
+}
 span {
 	color: $brand-color;
 	font-style: italic;
@@ -332,7 +359,6 @@ span {
   background-size: cover;
 }
 .skills {
-  width: 100%;
   min-height: calc(100vh - 160px);
   background: $background;
   display: flex;
@@ -340,7 +366,7 @@ span {
   	&-list {
   	display: flex;
   	flex-direction: column;
-  	flex: 0 0 442px;
+  	flex: 0 0 740px;
 	margin: 0 0 0 $gap;
 	
 		&-item {
@@ -348,34 +374,54 @@ span {
 		color: #000;
 		text-decoration: none;
 		padding-bottom: 32px;
-	
-			&:hover {
-			text-decoration: underline;
+		position: relative;
 
-			}						
-		}
+			&:before {
+			content: "";
+	    	width: 14px;
+	      	height: 14px;
+	      	background: $brand-color;
+	      	margin: 18px 0;
+	      	border-radius: 50%;
+	      	transition: width 0.5s; 
+			position: absolute;
+			top: 0;
+			left: 454px;
+			}
+  		}						
 	}
-	&-level {
-	display: flex;
-	flex-direction: column;
-	width: calc(100% - 442px);
-	margin: 0 $gap 0 0;
+	&:hover {
+  	text-decoration: underline;
+  	}
 
-		.level {
-		  display: flex;
-		  width: 14px;
-		  height: 14px;
-		  background: $brand-color;
-		  margin: 18px 0 30px;
-		  border-radius: 50%;
-		  transition: width 0.5s;
-		
-		&:hover {
-		  width: 100%;
-		  border-radius: 8px;
-		}
-		}
-	}
+	&:hover .skills-list-item.level-100:before { 
+        width: 100%;
+        border-radius: 8px; 
+    }
+    &:hover .skills-list-item.level-75:before { 
+        width: 75%;
+        border-radius: 8px; 
+    }
+    &:hover .skills-list-item.level-60:before { 
+        width: 60%;
+        border-radius: 8px; 
+    }
+    &:hover .skills-list-item.level-45:before { 
+        width: 45%;
+        border-radius: 8px; 
+    }
+    &:hover .skills-list-item.level-75:before { 
+        width: 75%;
+        border-radius: 8px; 
+    }
+    &:hover .skills-list-item.level-65:before { 
+        width: 65%;
+        border-radius: 8px; 
+    }
+    &:hover .skills-list-item.level-80:before { 
+        width: 80%;
+        border-radius: 8px; 
+    }
 }
 .title {
 	font-size: $gap;
@@ -460,7 +506,7 @@ span {
 
 	.email-me {
 	font-size: 32px;
-    color: #272822;
+    color: $main-text;
     text-decoration: none;
     font-style: normal;
     font-weight: bold;

@@ -46,6 +46,7 @@ table {
   border-spacing: 0; }
 
 body.dark-mode {
+  font-family: 'Noto Sans JP', sans-serif;
   background: #222629;
   color: #272822; }
   body.dark-mode a {
@@ -63,19 +64,34 @@ body.dark-mode {
     body.dark-mode .menu .btn-burger-line:after {
       background: #87C232; }
   body.dark-mode .hero {
-    background: #618930; }
+    background: #618930;
+    transition: background 2s; }
+    body.dark-mode .hero:before {
+      content: "";
+      width: 50%;
+      height: calc(100vh - 160px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      background: #F5F5F5;
+      transition: width 2s; }
     body.dark-mode .hero:hover {
       background: #F5F5F5; }
+      body.dark-mode .hero:hover:before {
+        width: 100%; }
   body.dark-mode span {
     color: #87C232; }
   body.dark-mode .menu-open .hero-content {
     background: #618930; }
     body.dark-mode .menu-open .hero-content .hero-nav span {
       color: #fff; }
+    body.dark-mode .menu-open .hero-content .hero-nav-item-link:hover {
+      text-decoration-color: #fff; }
   body.dark-mode .menu-open .hero {
     background: #F5F5F5;
     margin: 0; }
-  body.dark-mode .level {
+  body.dark-mode .skills-list-item:before {
     background: #87C232; }
   body.dark-mode .projects .title {
     color: #618930; }
@@ -99,6 +115,7 @@ body.dark-mode {
     background-image: url("../img/devices-dt.png"); }
 
 body.light-mode {
+  font-family: 'Noto Sans JP', sans-serif;
   background: #fff;
   color: #272822; }
   body.light-mode button {
@@ -195,7 +212,8 @@ h1 {
       font-weight: bold;
       text-decoration: none; }
       .menu-open .hero-nav-item-link:hover {
-        text-decoration: underline; }
+        text-decoration: underline;
+        text-decoration-color: #F92672; }
       .menu-open .hero-nav-item-link span {
         font-size: 18px;
         display: block;
@@ -207,19 +225,6 @@ h1 {
       color: #000;
       margin: 48px 0 80px; }
 
-.menu-open .hero {
-  width: 50%; }
-  .menu-open .hero:before {
-    width: 0; }
-  .menu-open .hero .welcome {
-    opacity: 0;
-    display: none; }
-  .menu-open .hero .info {
-    display: block;
-    opacity: 1;
-    margin: -50px 80px;
-    max-width: 480px; }
-
 .links {
   width: 80px;
   position: fixed;
@@ -230,6 +235,8 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  .links .list-item {
+    margin-bottom: 16px; }
 
 .hero {
   width: 100%;
@@ -248,7 +255,8 @@ h1 {
     top: 0;
     right: 0;
     z-index: 0;
-    background: #F5F5F5; }
+    background: #F5F5F5;
+    transition: opacity 4s, transform 2s; }
   .hero-text {
     position: relative;
     z-index: 10; }
@@ -273,7 +281,6 @@ h1 {
     justify-content: flex-start; }
     .hero:hover:before {
       opacity: 0;
-      transition: opacity 4s, transform 2s;
       transform: translateY(100%); }
     .hero:hover .info {
       display: block;
@@ -283,6 +290,20 @@ h1 {
     .hero:hover .welcome {
       opacity: 0;
       display: none; }
+
+.menu-open .hero {
+  width: 50%;
+  justify-content: center; }
+  .menu-open .hero:before {
+    width: 0; }
+  .menu-open .hero .welcome {
+    opacity: 0;
+    display: none; }
+  .menu-open .hero .info {
+    display: block;
+    opacity: 1;
+    margin: -50px 80px;
+    max-width: 480px; }
 
 span {
   color: #F92672;
@@ -297,38 +318,54 @@ span {
   background-size: cover; }
 
 .skills {
-  width: 100%;
   min-height: calc(100vh - 160px);
   background: #F5F5F5;
   display: flex; }
   .skills-list {
     display: flex;
     flex-direction: column;
-    flex: 0 0 442px;
+    flex: 0 0 740px;
     margin: 0 0 0 80px; }
     .skills-list-item {
       font-size: 32px;
       color: #000;
       text-decoration: none;
-      padding-bottom: 32px; }
-      .skills-list-item:hover {
-        text-decoration: underline; }
-  .skills-level {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 442px);
-    margin: 0 80px 0 0; }
-    .skills-level .level {
-      display: flex;
-      width: 14px;
-      height: 14px;
-      background: #F92672;
-      margin: 18px 0 30px;
-      border-radius: 50%;
-      transition: width 0.5s; }
-      .skills-level .level:hover {
-        width: 100%;
-        border-radius: 8px; }
+      padding-bottom: 32px;
+      position: relative; }
+      .skills-list-item:before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: #F92672;
+        margin: 18px 0;
+        border-radius: 50%;
+        transition: width 0.5s;
+        position: absolute;
+        top: 0;
+        left: 454px; }
+  .skills:hover {
+    text-decoration: underline; }
+  .skills:hover .skills-list-item.level-100:before {
+    width: 100%;
+    border-radius: 8px; }
+  .skills:hover .skills-list-item.level-75:before {
+    width: 75%;
+    border-radius: 8px; }
+  .skills:hover .skills-list-item.level-60:before {
+    width: 60%;
+    border-radius: 8px; }
+  .skills:hover .skills-list-item.level-45:before {
+    width: 45%;
+    border-radius: 8px; }
+  .skills:hover .skills-list-item.level-75:before {
+    width: 75%;
+    border-radius: 8px; }
+  .skills:hover .skills-list-item.level-65:before {
+    width: 65%;
+    border-radius: 8px; }
+  .skills:hover .skills-list-item.level-80:before {
+    width: 80%;
+    border-radius: 8px; }
 
 .title {
   font-size: 80px;
