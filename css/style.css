@@ -47,6 +47,7 @@ table {
 
 body.dark-mode {
   font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.17;
   background: #222629;
   color: #272822; }
   body.dark-mode a {
@@ -68,13 +69,12 @@ body.dark-mode {
     transition: background 2s; }
     body.dark-mode .hero:before {
       content: "";
-      width: 50%;
       height: calc(100vh - 160px);
       position: absolute;
       top: 0;
       right: 0;
       z-index: 2;
-      background: #F5F5F5;
+      background: url("../img/bg-img.png") no-repeat;
       transition: width 2s; }
     body.dark-mode .hero:hover {
       background: #F5F5F5; }
@@ -91,9 +91,11 @@ body.dark-mode {
   body.dark-mode .menu-open .hero {
     background: #F5F5F5;
     margin: 0; }
+    body.dark-mode .menu-open .hero:before {
+      display: none; }
   body.dark-mode .skills-list-item:before {
     background: #87C232; }
-  body.dark-mode .projects .title {
+  body.dark-mode .projects .title a {
     color: #618930; }
   body.dark-mode .projects-item a {
     color: #87C232; }
@@ -116,10 +118,15 @@ body.dark-mode {
 
 body.light-mode {
   font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.17;
   background: #fff;
   color: #272822; }
   body.light-mode button {
     background: #75715E; }
+  body.light-mode .title a {
+    color: #272822; }
+  body.light-mode .projects .title a {
+    color: #E6D874; }
 
 .wrapper {
   padding: 80px;
@@ -255,7 +262,7 @@ h1 {
     top: 0;
     right: 0;
     z-index: 0;
-    background: #F5F5F5;
+    background: url("../img/bg-img.png");
     transition: opacity 4s, transform 2s; }
   .hero-text {
     position: relative;
@@ -372,6 +379,8 @@ span {
   font-weight: bold;
   padding: 80px 80px 32px;
   background: #F5F5F5; }
+  .title a {
+    text-decoration: none; }
 
 .parallax.pic02 {
   background-image: url("../img/devices.png");
@@ -401,7 +410,8 @@ span {
     font-size: 32px;
     padding: 32px 0 16px; }
   .projects-item a {
-    color: #F92672; }
+    color: #F92672;
+    font-style: italic; }
 
 .experience {
   width: 100%;
@@ -422,6 +432,8 @@ span {
     .experience-item a {
       color: #F92672;
       font-style: italic; }
+  .experience h2 a {
+    color: #272822; }
 
 .contacts {
   display: flex;

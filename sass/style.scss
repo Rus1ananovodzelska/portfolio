@@ -3,12 +3,13 @@
 
 body.dark-mode {
 	font-family: 'Noto Sans JP', sans-serif;
+	line-height: 1.17;
     background: $bg-color-dt;
     color: $main-text-dt;
 
-	a {
-	color: $main-text-dt;
-	}
+    a {
+    color: $main-text-dt;
+    }
 
 	h1 {
 	color: $bg-color;
@@ -35,13 +36,12 @@ body.dark-mode {
 	
 		&:before {
 			content: "";
-			width: 50%;
 			height: calc(100vh - 160px);
 			position: absolute;
 			top: 0;
 			right: 0;
 			z-index: 2;
-			background: $background-dt;
+			background: url("../img/bg-img.png") no-repeat;
 			transition: width 2s;
 		}
 	
@@ -69,11 +69,15 @@ body.dark-mode {
 	.menu-open .hero {
 		background: $background-dt;
 		margin: 0;
+
+		&:before {
+		display: none;
+		}
 	}
 	.skills-list-item:before {
 		background: $brand-color-dt;
 	}
-	.projects .title {
+	.projects .title a { 
 		color: $primary-color-dt;
 	}
 	.projects-item a {
@@ -109,11 +113,20 @@ body.dark-mode {
 }
 body.light-mode {
 	font-family: 'Noto Sans JP', sans-serif;
+	line-height: 1.17;
     background: $bg-color;
     color: $main-text;
 
 	button {
     background: $icon-color;
+	}
+
+	.title a {
+	color: $main-text;
+	}
+
+	.projects .title a { 
+		color: $primary-color;
 	}
 }
 .wrapper {
@@ -276,7 +289,7 @@ h1 {
 		top: 0;
 		right: 0;
 		z-index: 0;
-		background: $background;
+		background: url("../img/bg-img.png");
 		transition: opacity 4s, transform 2s;
 	}
 
@@ -428,6 +441,10 @@ span {
 	font-weight: bold;
 	padding: $gap $gap 32px;
 	background: $background;
+
+	& a {
+	text-decoration: none;
+	}
 }
 .parallax.pic02 {
   background-image: url("../img/devices.png");
@@ -465,6 +482,7 @@ span {
 
 	a {
 	color: $brand-color;
+	font-style: italic;
 	}
 }
 .experience {
@@ -493,6 +511,9 @@ span {
 		color: $brand-color;
 		font-style: italic;
 		}
+	}
+	& h2 a { 
+		color: $main-text;
 	}
 }
 .contacts {
