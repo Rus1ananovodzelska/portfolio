@@ -11,6 +11,10 @@ body.dark-mode {
     color: $main-text-dt;
     }
 
+    .header {
+	background: $bg-color-dt;
+	}
+
 	h1 {
 	color: $bg-color;
 	}
@@ -58,6 +62,8 @@ body.dark-mode {
 	}
 	.menu-open .hero-content {
 		background: $primary-color-dt;
+		position: fixed;
+		z-index: 100;
 	
 	& .hero-nav span {
 		color: $bg-color;
@@ -69,6 +75,7 @@ body.dark-mode {
 	.menu-open .hero {
 		background: $background-dt;
 		margin: 0;
+		flex: 0 0 841px;
 
 		&:before {
 		display: none;
@@ -112,7 +119,7 @@ body.dark-mode {
   	}
 }
 body.light-mode {
-	font-family: 'Noto Sans JP', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	line-height: 1.17;
     background: $bg-color;
     color: $main-text;
@@ -134,8 +141,10 @@ body.light-mode {
 	min-height: 100vh;
 }
 .header {
+	width: 100%;
 	height: $gap;
 	position: fixed;
+	z-index: 100;
 	background: $bg-color;
 	top: 0;
 	left: 0;
@@ -198,7 +207,7 @@ h1 {
 }
 .menu-open .btn-burger {
 	left: 6px;
-
+	
 	.btn-burger-line {
 		transform: rotate(45deg);
 		width: 32px;	
@@ -226,8 +235,8 @@ h1 {
 	justify-content: center;
 	flex-direction: column;
 	flex: 0 0 439px;
-	margin-left: $gap;
-	
+	padding-left: $gap;
+
 	&-item {
 	margin-bottom: 32px;
 	
@@ -370,10 +379,14 @@ span {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: $gap;
+}
+.skills-section {
+	background: $background;
+	padding: $gap 0;
+	margin-bottom: $gap;
 }
 .skills {
-  min-height: calc(100vh - 160px);
-  background: $background;
   display: flex;
 
   	&-list {
@@ -404,7 +417,7 @@ span {
   		}						
 	}
 	&:hover {
-  	text-decoration: underline;
+  	text-decoration: none;
   	}
 
 	&:hover .skills-list-item.level-100:before { 
@@ -439,7 +452,7 @@ span {
 .title {
 	font-size: $gap;
 	font-weight: bold;
-	padding: $gap $gap 32px;
+	padding: 0 $gap 32px;
 	background: $background;
 
 	& a {
@@ -453,11 +466,13 @@ span {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: $gap;
 }
 .projects {
 	width: 100%;
-  	min-height: calc(100vh - 80px);
   	background: #353535;
+  	padding: $gap 0;
+  	margin-bottom: $gap;
 
     .title {
   	color: $primary-color;
@@ -487,9 +502,8 @@ span {
 }
 .experience {
 	width: 100%;
-  	min-height: calc(100vh - 80px);
 	background: $background;
-	margin-bottom: $gap;
+	padding: $gap 0;
 
 	&-item {
 	margin: 0 $gap;
@@ -520,6 +534,7 @@ span {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: $gap 0 0;
 
 	.email span {
 	display: block;
