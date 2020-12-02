@@ -19,9 +19,10 @@ body.dark-mode {
 	color: $bg-color;
 	}
 
-	button {
-    background: $icon-color-dt;
+	.theme:before {
+		background: url("../img/sun.svg") center no-repeat;     
 	}
+
 	.links .list-item svg * {
 		fill: $brand-color-dt;
 		}
@@ -62,8 +63,6 @@ body.dark-mode {
 	}
 	.menu-open .hero-content {
 		background: $primary-color-dt;
-		position: fixed;
-		z-index: 100;
 	
 	& .hero-nav span {
 		color: $bg-color;
@@ -75,7 +74,6 @@ body.dark-mode {
 	.menu-open .hero {
 		background: $background-dt;
 		margin: 0;
-		flex: 0 0 841px;
 
 		&:before {
 		display: none;
@@ -124,8 +122,12 @@ body.light-mode {
     background: $bg-color;
     color: $main-text;
 
-	button {
-    background: $icon-color;
+	.theme {
+	background: $primary-color;
+
+		&:before {
+	    background: url("../img/moon.svg") center no-repeat;
+		}
 	}
 
 	.title a {
@@ -156,9 +158,22 @@ h1 {
 	left: $gap;
 }
 .theme {
+	width: 32px;
+	height: 32px;
 	position: fixed;
-	top: 26px;
+	top: 43px;
 	right: $gap;
+	background: $brand-color-dt;
+
+	&:before {
+		content: "";
+		width: 32px;
+		height: 32px;
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		z-index: 2;		
+	}
 }
 .menu {
 	width: $gap;
@@ -230,11 +245,11 @@ h1 {
 		display: none;
 	}
 }
+
 .menu-open .hero-nav {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	flex: 0 0 439px;
 	padding-left: $gap;
 
 	&-item {
