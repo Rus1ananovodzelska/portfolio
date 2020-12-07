@@ -157,7 +157,8 @@ h1 {
   position: fixed;
   top: 43px;
   right: 80px;
-  background: #87C232; }
+  background: #87C232;
+  cursor: pointer; }
   .theme:before {
     content: "";
     width: 32px;

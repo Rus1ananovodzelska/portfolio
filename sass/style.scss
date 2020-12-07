@@ -164,6 +164,7 @@ h1 {
 	top: 43px;
 	right: $gap;
 	background: $brand-color-dt;
+	cursor: pointer;
 
 	&:before {
 		content: "";
